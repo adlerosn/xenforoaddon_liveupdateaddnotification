@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="liveupdatenotification" title="[kiror] LiveUpdate Notification" version_string="0.0" version_id="0" url="https://github.com/adlerosn/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups/>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases/>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <public_template_modifications>
+    <modification template="liveupdate_page_container" modification_key="addnotificationpagejs" description="Add JS to display updates as notifications" execution_order="10" enabled="1" action="preg_replace">
+      <find><![CDATA[/\<xen\:require js\=\"js\/liveupdate.+update\.js\" ?\/\>/s]]></find>
+      <replace><![CDATA[$0
+	<xen:require js="js/liveupdatenotification/notificationPageScript.js" />]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
